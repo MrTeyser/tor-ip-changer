@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
 # import vsech potrebnych modulu
-import sys, tkinter.ttk, random, _thread, time, tkinter.scrolledtext, socket, logging, os, argparse, urllib3, string, json, urllib.request, configparser, subprocess, sqlite3, webbrowser, re, ssl
+import sys, tkinter.ttk, random, _thread, time, tkinter.scrolledtext, socket, logging, os, argparse, string, json, urllib.request, configparser, subprocess, sqlite3, webbrowser, re, ssl
 
 if sys.platform == "win32":
     windows = True
@@ -967,9 +967,10 @@ class IpChanger(Tk):
         issuesurl = "%s/issues" % repourl
         def ok():
             if self.newWindow2:
+                new_var = ()
                 try:
                     self.newWindow2.destroy()
-                except ():
+                except new_var:
                     pass
                 self.newWindow2 = None
 
@@ -1065,15 +1066,7 @@ class IpChanger(Tk):
         self.newWindow3 = Toplevel(self)
         self.newWindow3.title("Update")
 
-        Label(self.newWindow3, text='Do you want to update ?').grid(row=1, column=1, columnspan=3, padx=(20, 20))
-
-        def close():
-            if self.newWindow3:
-                try:
-                    self.newWindow3.destroy()
-                except ():
-                    pass
-                self.newWindow3 = None
+    
 
         def no():
             close()
